@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Review</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flashes">
+        {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <header class="header">
+        <h1>Update Review</h1>
+    </header>
+
+    <form action="{{ url_for('update_review', user_id=user_id, review_id=review.id) }}" method="post">
+        <div class="form-group">
+            <label for="review-content">Your Review:</label>
+            <textarea id="review-content" name="content" rows="4" cols="50" required>{{ review.content }}</textarea>
+        </div>
+        <input type="submit" value="Update Review">
+    </form>
+
+</body>
+
+</html>

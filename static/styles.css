@@ -1,0 +1,109 @@
+body {
+    background-color: #450000; /* darker red */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #e5e5e5; /* light text */
+}
+
+.header {
+    background-color: #b9090b; /* Netflix red */
+    color: #e5e5e5; /* light text */
+    padding: 20px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+li {
+    padding: 10px 0;
+}
+
+.user-link {
+    color: #e5e5e5; /* light text */
+    text-decoration: none;
+    font-size: 1.2em;
+    border: 2px solid #b9090b; /* Netflix red */
+    padding: 10px;
+    display: inline-block;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.user-link:hover {
+    background-color: #b9090b; /* Netflix red */
+    color: #181818; /* dark background */
+}
+
+.movie-poster {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input[type="submit"].user-link {
+    background-color: transparent; /* remove button default background color */
+    color: #e5e5e5; /* same color as other text */
+    cursor: pointer; /* change the cursor to a hand when hovering */
+    border: 2px solid #b9090b; /* Netflix red */
+}
+
+input[type="submit"].user-link:hover {
+    background-color: #b9090b; /* Netflix red */
+    color: #181818; /* dark background */
+}
+
+form {
+    margin-top: 10px;
+}
+
+.delete-link {
+    color: #e5e5e5; /* light text */
+    text-decoration: none;
+    font-size: 14px; /* smaller font size */
+    background-color: #b9090b; /* Netflix red */
+    border: none;
+    padding: 5px 10px; /* smaller padding */
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.movie-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.movie-details {
+    flex-grow: 1;
+    padding: 0 15px;
+}
+
+.movie-title {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.movie-rating {
+    display: block;
+    text-align: center;
+}
+
+.movie-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

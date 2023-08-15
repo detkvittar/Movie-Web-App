@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Review</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flashes">
+        {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <header class="header">
+        <h1>Add Review</h1>
+    </header>
+
+    <form action="{{ url_for('add_review', user_id=user_id, movie_id=movie_id) }}" method="post">
+        <div class="form-group">
+            <label for="review-content">Your Review:</label>
+            <textarea id="review-content" name="review_content" rows="4" cols="50" required></textarea>
+        </div>
+        <input type="submit" value="Submit Review">
+    </form>
+
+</body>
+
+</html>

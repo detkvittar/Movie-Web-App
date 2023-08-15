@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    ...
+    <title>Movie Web App - Add Movie</title>
+    ...
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flashes">
+        {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    ...
+
+    <div class="centered-content">
+        <h2>Add Movie</h2>
+        <form action="{{ url_for('add_movie', user_id=user_id) }}" method="post">
+            <input type="text" name="movie_title" placeholder="Enter movie title">
+            <input type="submit" class="user-link" value="Add Movie">
+        </form>
+    </div>
+
+    ...
+</body>
+
+</html>
